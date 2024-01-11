@@ -11,6 +11,8 @@ const ordersRouter = require("./routes/orders");
 const mediaRouter = require("./routes/media");
 const coursesRouter = require("./routes/courses");
 
+const verifyToken = require("./middlewares/verifyToken");
+
 const app = express();
 
 app.use(logger("dev"));
@@ -24,6 +26,6 @@ app.use("/users", usersRouter);
 app.use("/payments", paymentsRouter);
 app.use("/orders", ordersRouter);
 app.use("/media", mediaRouter);
-app.use("/courses", coursesRouter);
+app.use("/courses", verifyToken, coursesRouter);
 
 module.exports = app;

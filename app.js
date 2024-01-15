@@ -10,6 +10,7 @@ const paymentsRouter = require("./routes/payments");
 const ordersRouter = require("./routes/orders");
 const mediaRouter = require("./routes/media");
 const coursesRouter = require("./routes/courses");
+
 const verifyToken = require("./middlewares/verifyToken");
 const refreshTokenRouter = require("./routes/refreshTokens");
 

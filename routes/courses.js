@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { APP_NAME } = process.env;
 
-/* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("courses");
-});
+const cousesHandler = require("./handler/courses");
+
+router.post("/", cousesHandler.create);
+router.put("/:id", cousesHandler.update);
+router.delete("/:id", cousesHandler.destroy);
 
 module.exports = router;

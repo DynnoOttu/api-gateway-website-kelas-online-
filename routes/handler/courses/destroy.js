@@ -6,8 +6,8 @@ const api = apiAdapter(URL_SERVICE_COURSE);
 module.exports = async (req, res) => {
   try {
     const id = req.params.id;
-    const mentor = await api.delete(`/api/mentors/${id}`);
-    return res.json(mentor.data);
+    const course = await api.delete(`/api/courses/${id}`);
+    return res.json(course.data);
   } catch (error) {
     if (error.code === "ECONNREFUSED") {
       return res
@@ -16,6 +16,6 @@ module.exports = async (req, res) => {
     }
     return res
       .status(404)
-      .json({ status: "error", message: "mentor not found" });
+      .json({ status: "error", message: "course not found" });
   }
 };

@@ -32,8 +32,8 @@ app.use("/users", usersRouter);
 app.use("/payments", paymentsRouter);
 app.use("/orders", ordersRouter);
 app.use("/media", mediaRouter);
-app.use("/courses", verifyToken, coursesRouter);
+app.use("/courses", coursesRouter);
 app.use("/refresh-tokens", refreshTokenRouter);
-app.use("/mentors", mentorsRouter);
+app.use("/mentors", verifyToken, mentorsRouter);
 
 module.exports = app;

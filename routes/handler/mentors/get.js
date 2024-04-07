@@ -15,7 +15,8 @@ module.exports = async (req, res) => {
         .json({ status: "error", message: "service unavailable" });
     }
 
-    const { status, data } = error.response;
-    return res.status(status).json(data);
+    return res
+      .status(404)
+      .json({ status: "error", message: "mentor not found" });
   }
 };

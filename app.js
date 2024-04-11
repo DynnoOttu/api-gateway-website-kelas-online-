@@ -38,6 +38,6 @@ app.use("/media", mediaRouter);
 app.use("/courses", coursesRouter);
 app.use("/refresh-tokens", refreshTokenRouter);
 app.use("/mentors", verifyToken, mentorsRouter);
-app.use("/chapters", chaptersRouter);
+app.use("/chapters", verifyToken, chaptersRouter);
 
 module.exports = app;

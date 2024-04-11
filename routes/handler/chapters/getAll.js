@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   try {
     const chapters = await api.get(`/api/chapters/`, {
       params: {
-        ...req.body,
+        ...req.query,
       },
     });
     return res.json(chapters.data);

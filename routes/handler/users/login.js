@@ -40,6 +40,8 @@ module.exports = async (req, res) => {
         .status(500)
         .json({ status: "error", message: "service unavailable" });
     }
-    return res.status(404).json(data);
+    return res.status(400).json(error.response.data);
+    //console.log("teserror", error.response.data.message);
+    // console.log("errr", error.response);
   }
 };
